@@ -42,6 +42,8 @@ app.delete("/delete/:id", async function (req, res) {
         res.json({ result: "Ok" });
     });
 
+database.createTable();
+
 const server = http.createServer(app);
 server.listen(80, () => {
     console.log("- server running");
