@@ -7,11 +7,7 @@ export const createLogin = () => {
     const errorMessage = document.getElementById("errorMessage");
     let isLogged = false;
   
-    if (sessionStorage.getItem("isLogged") === "true") {
-      isLogged = true;
-      location.href = "#adminTable";
-      return { isLogged: () => isLogged };
-  }
+    
   
     const login = (username, password) => {
         return new Promise((resolve, reject) => {
@@ -33,20 +29,31 @@ export const createLogin = () => {
             .catch(reject);
         });
     };
-  
+  //da sistemare
+   /* if (sessionStorage.getItem("isLogged") === "true") {
+        console.log()
+        isLogged = true;
+        location.href = "#table";
+        return;
+      }
+        */
     loginButton.onclick = () => {
         const username = inputName.value;
         const password = inputPassword.value;
-        
+        console.log(username + " " + password)
         login(username, password).then((result) => {
+            inputName.value = "";
+            inputPassword.value = "";
+            console.log("result")
             if (result) {
                 console.log("Login tramite API riuscito:", result);
                 isLogged = true;
                 sessionStorage.setItem("isLogged", "true");
-                location.href = "#adminTable";
+                location.href = "#table";
   
             } else {
                 errorMessage.classList.remove("d-none");
+                console.log("login non riuscito")
             }
         }).catch((err) => {
             console.error("Errore durante il login:", err);
