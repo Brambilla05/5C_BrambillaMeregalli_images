@@ -1,6 +1,6 @@
 export const generateTodo = function (parentElement) {
     let data = [];
-  
+    
     return {
       send: (todo) => {
         return new Promise((resolve, reject) => {
