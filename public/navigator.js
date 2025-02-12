@@ -7,7 +7,7 @@ const hide = (element) => {
  }
  
  export const createNavigator = (parentElement) => {
-    const pages = Array.from(document.querySelectorAll(".pages"));
+    const pages = Array.from(document.querySelectorAll(".page"));
     
     const render = () => {
        const url = new URL(document.location.href);
