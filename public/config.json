@@ -1,0 +1,5 @@
+{
+    "myToken" : "bec3e272-4900-416a-aa76-8a5a033160e9",
+    "set" : "https://ws.cipiaceinfo.it/cache/set",
+    "get": "https://ws.cipiaceinfo.it/cache/get"
+}

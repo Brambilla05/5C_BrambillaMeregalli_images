@@ -1,21 +1,25 @@
-//toke e ekey in conf.json
 export const createLogin = () => {
-    const myToken = "bec3e272-4900-416a-aa76-8a5a033160e9"; 
+
     const inputName = document.getElementById("username"); 
     const inputPassword = document.getElementById("password"); 
     const loginButton = document.getElementById("credentialLogin");
     const errorMessage = document.getElementById("errorMessage");
     let isLogged = false;
-  
-    
-  
+    let conf;
+
+    fetch("config.json")
+    .then((r) => r.json())
+    .then((data) => {
+      conf = data;
+    })
+
     const login = (username, password) => {
         return new Promise((resolve, reject) => {
             fetch("http://ws.cipiaceinfo.it/credential/login", {
                 method: "POST",
                 headers: {
                     "content-type": "application/json",
-                    "key": myToken
+                    "key": conf["myToken"] 
                 },
                 body: JSON.stringify({
                     username: username,
