@@ -30,13 +30,13 @@ export const createLogin = () => {
         });
     };
   //da sistemare
-   /* if (sessionStorage.getItem("isLogged") === "true") {
+    if (sessionStorage.getItem("isLogged") === "true") {
         console.log()
         isLogged = true;
         location.href = "#table";
         return;
       }
-        */
+        
     loginButton.onclick = () => {
         const username = inputName.value;
         const password = inputPassword.value;
