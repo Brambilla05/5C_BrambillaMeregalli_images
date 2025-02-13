@@ -53,8 +53,8 @@ export const createLogin = () => {
                 console.log("Login tramite API riuscito:", result);
                 isLogged = true;
                 sessionStorage.setItem("isLogged", "true");
-                location.href = "#table";
-  
+                document.getElementById("login").classList.add("d-none");  
+                document.getElementById("table").classList.remove("d-none");  
             } else {
                 errorMessage.classList.remove("d-none");
                 console.log("login non riuscito")

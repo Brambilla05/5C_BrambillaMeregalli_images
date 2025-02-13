@@ -73,9 +73,6 @@ export const generateTodo = function (parentElement,pubsub) {
             '<td><button type="button" class="btn btn-danger" id="' +
             index +
             '">DELETE</button></td>' +
-            '<td><button type="button" class="btn btn-success" id="' +
-            index +
-            '">COMPLETED</button></td>' +
             "</tr>";
         });
         html += "</tbody></table>";
