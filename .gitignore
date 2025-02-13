@@ -132,3 +132,5 @@ dist
 conf.json
 ca.pem
 package-lock.json
+config.json
+files
