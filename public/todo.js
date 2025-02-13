@@ -92,17 +92,6 @@ export const generateTodo = function (parentElement,pubsub) {
             });
           };
         });
-        document.querySelectorAll("button.btn-success").forEach((e, index) => {
-          e.onclick = () => {
-            this.completeTodo(data[index]).then(() => {
-              this.load().then((r) => {
-                this.setData(r.todos);
-                console.log(r.todos);
-                this.render();
-              });
-            });
-          };
-        });
       },
       setData: (newValue) => {
         data = newValue;
