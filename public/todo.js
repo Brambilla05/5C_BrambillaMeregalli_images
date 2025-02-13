@@ -1,5 +1,8 @@
-export const generateTodo = function (parentElement) {
+
+
+export const generateTodo = function (parentElement,pubsub) {
     let data = [];
+    
     
     return {
       send: (todo) => {
@@ -51,6 +54,10 @@ export const generateTodo = function (parentElement) {
       },
   
       render: function () {
+        pubsub.subscribe("reload",(d)=>{
+      data=d;
+      this.render();
+        });
         let html = '<table class="table table-striped"><tbody>';
         data.forEach((e, index) => {
           let cssClass = e.completed ? "task-completed " : "";
@@ -77,6 +84,7 @@ export const generateTodo = function (parentElement) {
             this.deleteTodo(data[index].id).then(() => {
               this.load().then((r) => {
                 this.setData(r.todos);
+                pubsub.publish("imagesAdd",r);
                 this.render();
               });
             });

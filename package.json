@@ -16,6 +16,5 @@
     "mysql2": "^3.12.0",
     "path": "^0.12.7"
   },
-  "devDependencies": {},
   "description": ""
 }

@@ -29,7 +29,7 @@ app.get("/get", async (req, res) => {
 
 app.post("/add", async (req, res) => {
     await upload(req, res, async (err) => {
-        let road = await database.insert();
+        let road = await database.insert({url:"/files/"+req.file.filename});
         console.log(req.file.filename);
         res.json({ url: "./files/" + req.file.filename });
     });

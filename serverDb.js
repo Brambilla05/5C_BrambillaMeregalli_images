@@ -27,8 +27,9 @@ const db = {
   },
 
   insert: async (img) => {
-    const sql = `INSERT INTO images (url) VALUES (?)`;
-    return await executeQuery(sql, [img.url]);
+    let sql = `INSERT INTO images (url) VALUES ('%url')`;
+    sql=sql.replace("%url",img.url);
+    return await executeQuery(sql);
   },
   
   select: async () => {

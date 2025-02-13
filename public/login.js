@@ -1,5 +1,5 @@
-export const createLogin = () => {
 
+export const createLogin = () => {
     const inputName = document.getElementById("username"); 
     const inputPassword = document.getElementById("password"); 
     const loginButton = document.getElementById("credentialLogin");
