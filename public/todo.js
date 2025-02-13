@@ -3,7 +3,6 @@
 export const generateTodo = function (parentElement,pubsub) {
     let data = [];
     
-    
     return {
       send: (todo) => {
         return new Promise((resolve, reject) => {
@@ -61,14 +60,16 @@ export const generateTodo = function (parentElement,pubsub) {
         let html = '<table class="table table-striped"><tbody>';
         data.forEach((e, index) => {
           let cssClass = e.completed ? "task-completed " : "";
+          console.log(e.url);
           html +=
             "<tr class=" +
             cssClass +
             "table-row" +
             ">" +
             "<td>" +
-            e.name +
-            "</td>" +
+            "<img src='"+
+            e.url +
+            "' alt='mere'></td>" +
             '<td><button type="button" class="btn btn-danger" id="' +
             index +
             '">DELETE</button></td>' +
@@ -78,6 +79,7 @@ export const generateTodo = function (parentElement,pubsub) {
             "</tr>";
         });
         html += "</tbody></table>";
+        console.log(html);
         parentElement.innerHTML = html;
         document.querySelectorAll("button.btn-danger").forEach((e, index) => {
           e.onclick = () => {

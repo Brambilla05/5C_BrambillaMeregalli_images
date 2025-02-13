@@ -13,6 +13,7 @@ const submit=document.getElementById("submit");
 const navigator = createNavigator(pages);
 const loginComponent = createLogin();
 const pubsub = createPubSub();
+pubsub.subscribe("reload",()=> console.log("pippo"));
 const carouselComponent = carousel(document.getElementById("carosello"), pubsub);
 const table = generateTodo(tableDiv,pubsub);
 table.render();

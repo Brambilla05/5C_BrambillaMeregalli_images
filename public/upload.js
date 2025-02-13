@@ -61,7 +61,7 @@ export const uploadFile = (parentElement, pubsub) => {
                 const data = await response.json();
                 images = data;
                 this.render();
-                pubsub.publish("reload",images);
+               pubsub.publish("reload",images);
             } catch (error) {
                 console.error("Errore durante il caricamento dei file:", error);
             }
@@ -94,7 +94,7 @@ export const uploadFile = (parentElement, pubsub) => {
         },
 
         handleSubmit: async function (inputElement) {
-            console.log("brambillatTiAmo");
+            console.log("baranitTiAmo");
             const file = inputElement.files[0];
             if (!file) return;
 

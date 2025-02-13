@@ -1,14 +1,15 @@
 export const createPubSub = () => {
-    const dict = {};
+    const events = {};
+
     return {
         subscribe: (eventName, callback) => {
-            if (!dict[eventName]) {
-                dict[eventName] = [];
+            if (!events[eventName]) {
+                events[eventName] = [];
             }
-            dict[eventName].push(callback);
+            events[eventName].push(callback);
         },
-        publish: (eventName) => {
-            dict[eventName].forEach((callback) => callback());
-        }
-    }
-}
+        publish: (eventName,data) => {
+            events[eventName].forEach(callback => callback(data));
+        },
+    };
+};
