@@ -12,6 +12,7 @@ const submit=document.getElementById("submit");
 
 const navigator = createNavigator(pages);
 const loginComponent = createLogin();
+console.error(loginComponent);
 const pubsub = createPubSub();
 pubsub.subscribe("reload",()=> console.log("pippo"));
 const carouselComponent = carousel(document.getElementById("carosello"), pubsub);
@@ -26,6 +27,5 @@ upload.build([{id:1, url:"/files/Screenshot 2025-02-12 164341.png.jpg"},{id:2, u
 
 submit.onclick=()=>{
     upload.handleSubmit(document.getElementById("todoInput"));
-
 }
 upload.render();

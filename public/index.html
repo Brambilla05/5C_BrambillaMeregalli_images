@@ -17,8 +17,7 @@
             <div class="row">
                <h1>Sliders immagini</h1>
                <ul>
-                  <li><a href="#login">Login</a></li>
-                  <li><a href="#table">table</a></li>
+                  <li><a href="#admin">table</a></li>
                </ul>
                <div id="carouselExample" class="carousel slide">
                   <div class="carousel-inner" id="carosello">
@@ -35,38 +34,39 @@
             </div>
          </div>
 
-         <div id="login" class="page">
-            <div class="row">
-               <h2>Login</h2>
-               <input type="text" id="username">username</input>
-               <input type="text" id="password">password</input>
-               <button type="submit" id="credentialLogin">login</button>
-               <div id="errorMessage"></div>
-               <a href="#home">Torna alla Home</a>
-            </div>
-         </div>
-
-         <div id="table" class="page">
-            <h2>ADMIN</h2>
-            <div class="row">
-               <div class="col">
-                  <input type="file" id="todoInput" class="form-control" placeholder="inserisci immagine">
-               </div>
-               <div class="col">
-                  <button type="button" id="submit" class="btn btn-success">submit</button>
+         <div id="admin" class="page">
+            <div id="login">
+               <div class="row">
+                  <h2>Login</h2>
+                  <input type="text" id="username">username</input>
+                  <input type="text" id="password">password</input>
+                  <button type="button" id="credentialLogin">login</button>
+                  <div id="errorMessage"></div>
                   <a href="#home">Torna alla Home</a>
                </div>
             </div>
-            <div class="row">
-               <table class="table table-striped">
-                  <thead>
-                     <th>Image</th>
-                     <th>Delete</th>
-                  </thead>
-                  <tbody id="tb">
+            <div id="table" class="d-none">
+               <h2>ADMIN</h2>
+               <div class="row">
+                  <div class="col">
+                     <input type="file" id="todoInput" class="form-control" placeholder="inserisci immagine">
+                  </div>
+                  <div class="col">
+                     <button type="button" id="submit" class="btn btn-success">submit</button>
+                     <a href="#home">Torna alla Home</a>
+                  </div>
+               </div>
+               <div class="row">
+                  <table class="table table-striped">
+                     <thead>
+                        <th>Image</th>
+                        <th>Delete</th>
+                     </thead>
+                     <tbody id="tb">
 
-                  </tbody>
-               </table>
+                     </tbody>
+                  </table>
+               </div>
             </div>
          </div>
       </div>

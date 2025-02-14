@@ -25,7 +25,7 @@ export const generateTodo = function (parentElement,pubsub) {
   
       load: () => {
         return new Promise((resolve, reject) => {
-          fetch("/todo")
+          fetch("/get")
             .then((response) => response.json())
   
             .then((json) => {
@@ -37,7 +37,7 @@ export const generateTodo = function (parentElement,pubsub) {
   
       deleteTodo: (id) => {
         return new Promise((resolve, reject) => {
-          fetch("/todo/" + id, {
+          fetch("/delete/" + id, {
             method: "DELETE",
   
             headers: {
@@ -73,9 +73,6 @@ export const generateTodo = function (parentElement,pubsub) {
             '<td><button type="button" class="btn btn-danger" id="' +
             index +
             '">DELETE</button></td>' +
-            '<td><button type="button" class="btn btn-success" id="' +
-            index +
-            '">COMPLETED</button></td>' +
             "</tr>";
         });
         html += "</tbody></table>";
@@ -83,9 +80,10 @@ export const generateTodo = function (parentElement,pubsub) {
         parentElement.innerHTML = html;
         document.querySelectorAll("button.btn-danger").forEach((e, index) => {
           e.onclick = () => {
+            console.log(e)
             this.deleteTodo(data[index].id).then(() => {
               this.load().then((r) => {
-                this.setData(r.todos);
+                this.setData(r);
                 pubsub.publish("imagesAdd",r);
                 this.render();
               });

@@ -38,7 +38,7 @@ app.post("/add", async (req, res) => {
 app.delete("/delete/:id", async function (req, res) {
     const files = await database.select();
     const toDelete = files.find(function (file) { return file.id == req.params.id; });
-        await database.delete(toDelete.id);
+        await database.remove(toDelete);
         res.json({ result: "Ok" });
     });
 

@@ -94,7 +94,7 @@ export const uploadFile = (parentElement, pubsub) => {
         },
 
         handleSubmit: async function (inputElement) {
-            console.log("baranitTiAmo");
+            console.log("buoni");
             const file = inputElement.files[0];
             if (!file) return;
 
