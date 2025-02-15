@@ -1,9 +1,29 @@
+body {
+   background: linear-gradient(to right, #ff7e5f, #feb47b);
+   color: #333;
+   font-family: Arial, sans-serif;
+}
+
+.carousel-item img {
+   max-width: 50%;
+   max-height: 50%; 
+   height: auto; 
+   display: block; 
+   margin: 0 auto; 
+}
+
+.table-row img {
+   max-width: 50%; 
+   max-height: 25%;
+   height: auto; 
+   display: block; 
+   margin: 0 auto; 
+}
+
 .visible {
-    display: block;
- }
- 
- .hidden {
-    display: none;
- }
- 
- 
+   display: block;
+}
+
+.hidden {
+   display: none;
+}
