@@ -62,6 +62,10 @@ export const uploadFile = (parentElement, pubsub) => {
                 images = data;
                 this.render();
                pubsub.publish("reload",images);
+               pubsub.subscribe("reload", (data)=>{
+                images=data;
+                this.render();
+            })
             } catch (error) {
                 console.error("Errore durante il caricamento dei file:", error);
             }

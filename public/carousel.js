@@ -5,6 +5,11 @@ export const carousel = (parentElement,pubsub) => {
         build:function(img){
            images=img;
            pubsub.subscribe("imagesAdd", (data)=>{
+            
+            images=data;
+            this.render();
+        })
+        pubsub.subscribe("reload", (data)=>{
             images=data;
             this.render();
         })

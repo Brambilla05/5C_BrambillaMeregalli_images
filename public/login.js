@@ -66,15 +66,10 @@ export const createLogin = () => {
             inputPassword.value = "";
   
     }
-
-
-
     return {
         isLogged: () => isLogged,
         loginHandle: () => () => {
                   }
     };
-
-
 
 };
