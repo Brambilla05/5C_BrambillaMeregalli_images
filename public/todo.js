@@ -56,10 +56,13 @@ export const generateTodo = function (parentElement, pubsub) {
                   cssClass +
                   "table-row" +
                   ">" +
-                  "<td>" +
+                  "<td class='text-center'>" +
+                 `<a href="${e.url}" target='_blank'>${e.url} </a>`+
+                  "</td>" +
+                  "<td class='text-center'>" +
                   "<img src='" +
                   e.url +
-                  "' alt='Image' class='img-fluid'>" + // Add class for responsive image
+                  "' alt='Image' class='img-fluid'>" +
                   "</td>" +
                   '<td><button type="button" class="btn btn-danger" id="' +
                   index +
